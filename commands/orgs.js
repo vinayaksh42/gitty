@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const Discord = require("discord.js");
-const config = require('../config.json');
+const config = require("../config.json");
 
 module.exports = {
   name: "org",
@@ -10,12 +10,10 @@ module.exports = {
     const trim = (str, max) =>
       str.length > max ? `${str.slice(0, max - 3)}...` : str;
 
-
     if (!args.length) {
-      if(!config.org.length)
-      return message.channel.send("You need to supply a search term!");
-      else
-      args=config.org;
+      if (!config.org.length)
+        return message.channel.send("You need to supply a search term!");
+      else args = config.org;
     }
 
     var list = [];
